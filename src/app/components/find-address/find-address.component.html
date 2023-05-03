@@ -1,8 +1,11 @@
 <p>find-address works!</p>
-<form  class='form-search-address' (submit)="onHandleSubmit($event)">
+<form class='form-search-address' (submit)="onHandleSubmit($event)">
     <div class='form-div'>
         <h3>Търсене на адрес</h3>
         <input type='text' name='address' #inpAdrs ngModel (keyup)="onHandleChange($event)" />
         <input type="submit" class='form-inp-submit' value='Намери на картата' />
     </div>
+    <section *ngFor="let adrdress of findAddresses">
+        <li class="form-li-suggestion" (click)="handleClickSuggestion($event)">{{adrdress.text}}</li>
+    </section>
 </form>

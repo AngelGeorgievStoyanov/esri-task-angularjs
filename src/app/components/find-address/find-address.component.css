@@ -1,0 +1,52 @@
+.form-search-address {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    min-height: auto;
+    border: solid 1px;
+    padding: 20px;
+    background-color: #d1dcdc;
+    box-shadow: 2px 2px 4px black;
+    margin-bottom: 10px;
+}
+
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-around
+}
+
+
+
+.form-li-suggestion {
+    background-color: #464444;
+    cursor: pointer;
+    margin: 0.5px;
+    padding: 0px 5px 0px 5px;
+    list-style-type: none;
+
+}
+
+
+
+.form-li-suggestion:hover {
+    background-color: #a0a4a4;
+}
+
+
+.form-inp-submit:hover {
+    cursor: pointer;
+    background-color: #a0a4a4;
+
+}
+
+
+@media screen and (max-width:500px) {
+    .form-search-address {
+        display: flex;
+        width: 65%;
+    }
+
+}

@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import esri = __esri; // Esri types
+import { CommonService } from '../../shared/common.service';
 import { loadModules } from 'esri-loader';
+
+import esri = __esri; // Esri types
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -15,13 +18,30 @@ export class MapComponent implements AfterViewInit {
   defaultCenterLon: number = 23.321590139866355;//LOCATION SOFIA
   defaultZoom: number = 10;
   defaultBaseMap: string = 'streets-vector';
-  constructor() { }
+  constructor(private shared: CommonService) { }
 
   ngAfterViewInit(): void {
     this.initDefaultMap();
   }
 
 
+
+  ngOnInit() {
+    this.shared.centerArr$.subscribe(
+      centerArr => {
+
+        if (this.mapView) {
+
+          this.mapView!.goTo({
+            center: centerArr,
+            zoom: 14,
+
+          }).catch(function (error) {
+            console.error(error)
+          })
+        }
+      })
+  }
 
   private async initDefaultMap(): Promise<void> {
     const [Map, MapView] = await loadModules(['esri/WebMap', 'esri/views/MapView']);
