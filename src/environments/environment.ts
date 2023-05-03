@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiURL: 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/'
+
 };
 
 /*
