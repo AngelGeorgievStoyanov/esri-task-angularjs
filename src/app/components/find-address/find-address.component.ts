@@ -19,45 +19,43 @@ export class FindAddressComponent {
     if (typeof inp.value === "string" && inp.value.trim() !== "") {
       this.arcgisService.findSuggestAdress(inp.value).subscribe({
         next: (data: any) => {
-          this.findAddresses = data.suggestions
+          this.findAddresses = data.suggestions;
         },
         error: (err) => {
-          console.log(err)
+          console.log(err);
 
         }
-      })
+      });
 
-    }
-  }
+    };
+  };
 
 
   onHandleSubmit(e: Event) {
 
-    e.preventDefault()
+    e.preventDefault();
     if ((this.inpAdrs) && typeof this.inpAdrs.nativeElement.value === "string" && this.inpAdrs.nativeElement.value.trim() !== "") {
       this.arcgisService.findAddress(this.inpAdrs.nativeElement.value).subscribe({
         next: (data: any) => {
 
-          this.shared.updateCenterArr([data.candidates[0].location.x, data.candidates[0].location.y])
+          this.shared.updateCenterArr([data.candidates[0].location.x, data.candidates[0].location.y]);
 
         },
         error: (err) => {
-          console.log(err)
+          console.log(err);
         }
-      })
-    }
-  }
+      });
+    };
+  };
 
 
   handleClickSuggestion(e: Event) {
 
     const seggestion = e.target as HTMLLIElement;
     if (this.inpAdrs !== undefined) {
-      this.inpAdrs.nativeElement.value = seggestion.innerText
-      this.findAddresses = []
-    }
+      this.inpAdrs.nativeElement.value = seggestion.innerText;
+      this.findAddresses = [];
+    };
+  };
 
-
-  }
-
-}
+};

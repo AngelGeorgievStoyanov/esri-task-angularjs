@@ -6,11 +6,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class CommonService {
 
-private centerArr: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
-public centerArr$: Observable<any[]> = this.centerArr.asObservable();
+  private centerArr: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  public centerArr$: Observable<any[]> = this.centerArr.asObservable();
 
-updateCenterArr(updatedCenterArr:any[]) {
-  this.centerArr.next(updatedCenterArr);
-}
+  updateCenterArr(updatedCenterArr: any[]) {
+    this.centerArr.next(updatedCenterArr);
+  };
 
-}
+};
