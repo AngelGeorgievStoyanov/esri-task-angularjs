@@ -1,4 +1,15 @@
 # EsriTaskAngularjs
+# Esri Bulgaria - Task for Front End Geospatial Developer
+# GitHub https://github.com/AngelGeorgievStoyanov/esri-task-angularjs
+## Author: Angel Stoyanov
+### Technologies used:
+* Angular
+* HTML
+* CSS
+
+### Functionality
+* Load Esri Map. Search on addresses, suggested addresses and add a point (marker) on the map. Responsive design. 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
